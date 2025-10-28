@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using AffirmationsAPI.Data;
+using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,14 +18,17 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-    app.MapScalarApiReference(); 
+    app.MapScalarApiReference();
 }
 
 // this enables HTTPS redirection middleware
 app.UseHttpsRedirection();
+
 // this enables authorization middleware
 app.UseAuthorization();
+
 // this maps controllers to endpoints
 app.MapControllers();
+
 // this runs the application
 app.Run();
