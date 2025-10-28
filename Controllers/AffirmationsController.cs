@@ -1,8 +1,8 @@
+using AffirmationsAPI.Data;
+using AffirmationsAPI.DTOs;
+using AffirmationsAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using AffirmationsAPI.Data;
-using AffirmationsAPI.Models;
-using AffirmationsAPI.DTOs;
 
 namespace AffirmationsAPI.Controllers;
 
@@ -26,16 +26,14 @@ public class AffirmationsController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Affirmation>> Post([FromBody] CreateAffirmationDto dto)
     {
-
         var affirmation = new Affirmation
         {
             Title = dto.Title,
             Body = dto.Body,
-            Author = dto.Author
-
+            Author = dto.Author,
         };
-        
-    _context.Affirmations.Add(affirmation);
+
+        _context.Affirmations.Add(affirmation);
         await _context.SaveChangesAsync();
 
         return CreatedAtAction(nameof(Get), new { id = affirmation.Id }, affirmation);
