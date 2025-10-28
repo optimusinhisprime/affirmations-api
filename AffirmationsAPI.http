@@ -1,0 +1,6 @@
+@AffirmationsAPI_HostAddress = http://localhost:5088
+
+GET {{AffirmationsAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
