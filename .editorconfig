@@ -42,6 +42,11 @@ dotnet_diagnostic.SA1633.severity = none  # File header not required
 dotnet_diagnostic.SA1200.severity = none  # Using directives placement
 dotnet_diagnostic.SA1309.severity = none  # Allow underscore prefix for private fields
 dotnet_diagnostic.SA1101.severity = none  # Don't require 'this.' prefix
+dotnet_diagnostic.SA1600.severity = none  # XML documentation not required
+dotnet_diagnostic.SA1601.severity = none  # Partial elements documentation
+dotnet_diagnostic.SA1602.severity = none  # Enumeration items documentation
+dotnet_diagnostic.SA1516.severity = none  # Elements should be separated by blank line
+dotnet_diagnostic.SA0001.severity = none  # XML comment analysis disabled
 
 # Code quality
 dotnet_style_qualification_for_field = false:warning
